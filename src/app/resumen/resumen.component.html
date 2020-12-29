@@ -5,7 +5,7 @@
           <p>Web con 2 años de experiencia en el desarrollo Front end desde 0 y  en diversos lenguajes Css, Html, Javascript, Ecmascript, Typescript, Bootstrap, Angular y Git-hub</p>
           <div class="info-list row">
               <div class="col-sm-6"><span>Nombre : </span> Fernando Ramirez</div>
-              <div class="col-sm-6"><span>Fecha de Nacimiento : </span> Febrero 4, 1990 </div>
+              <div class="col-sm-6"><span>Fecha de Nacimiento : </span>4 de Febrero, 1990 </div>
               <div class="col-sm-6"><span>Dirección : </span> Malaga , España</div>
               <div class="col-sm-6"><span>Email : </span> ferjaviramirez@gmail.com</div>
               <div class="col-sm-6"><span>Telefono : </span> +34 675387228</div>
@@ -36,13 +36,13 @@
               <div class="row">
                   <div class="col-md-12">
                       <div class="exp-holder">
-                          <div >
+                          <div *ngFor="let expe of cv.experiencia">
                             <div class="exp">
                                 <div class="hgroup">
-                                    <h4><span></span> - </h4>
-                                    <h5>  </h5>
+                                    <h4><span>{{expe.puesto}}</span>-{{expe.empresa}} </h4>
+                                    <h5> {{expe.fecha}} </h5>
                                 </div>
-                                <p></p>
+                                <p>{{expe.descripcion}}</p>
                             </div>
                         </div>
                       </div>
@@ -56,13 +56,13 @@
               <div class="row">
                   <div class="col-md-12">
                       <div class="exp-holder">
-                        <div >
-                          <div class="exp">
+                        <div *ngFor="let edu of cv.educacion " >
+                          <div class="exp" >
                               <div class="hgroup">
-                                  <h4> | <a href="" target="_blank"><span>Ver Certificado</span></a></h4>
+                                  <h4> {{edu.titulo}} | {{edu.fecha}}</h4>
                                   <h5></h5>
                               </div>
-                              <p></p>
+                              <p>{{edu.descripcion}}</p>
                           </div>
                         </div>
                       </div>
@@ -78,71 +78,37 @@
                       <i class="ion-laptop"></i>
                   </div>
                   <h4>Diseño Web</h4>
-                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.</p>
+                  <p>Una web es imprescindible para atraer a clientes potenciales,te brindo un diseño responsive y actual que se adapta a tu indetidad corporativa, logrando tus objetivos y metas dando a conocer tu negocio en el mundo digital.</p>
               </div>
               <div class="col-md-4 col-sm-6 service">
                   <div class="service-icon">
                       <i class="ion-pie-graph"></i>
                   </div>
                   <h4>Desarrollo de Aplicaciones</h4>
-                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.</p>
+                  <p>Soy experto en diseño y desarrollo de aplicaciones, garantizando una total y absoluta libertad en cuanto a interacción y contenido.</p>
               </div>
               <div class="col-md-4 col-sm-6 service">
                   <div class="service-icon">
                       <i class="ion-paintbucket"></i>
                   </div>
-                  <h4>Diseño Grafico</h4>
-                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.</p>
+                  <h4>Marketing Digital</h4>
+                  <p>Tengo el conjunto de estrategias volcadas hacia la promoción de una marca en el internet, porque gracias al marketing online sabemos qué hacen los usuarios en la red, cómo se comportan en nuestro sitio web o tienda electrónica y qué preferencias tienen. Así pues, el marketing digital no solo sirve para vender más. Sirve para vender mejor, optimizando al máximo los recursos que nos ofrece internet.</p>
               </div>
-              <div class="col-md-4 col-sm-6 service">
-                  <div class="service-icon">
-                      <i class="ion-printer"></i>
-                  </div>
-                  <h4>Print Design</h4>
-                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.</p>
-              </div>
-              <div class="col-md-4 col-sm-6 service">
-                  <div class="service-icon">
-                      <i class="ion-qr-scanner"></i>
-                  </div>
-                  <h4>Graphic Design</h4>
-                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.</p>
-              </div>
-              <div class="col-md-4 col-sm-6 service">
-                  <div class="service-icon">
-                      <i class="ion-social-buffer"></i>
-                  </div>
-                  <h4>Print Design</h4>
-                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.</p>
-              </div>
+              
           </div>
       </div>
-     <!--  <div class="block-content">
-          <h3 class="block-title">Awards</h3>
-          <div class="row">
-              <div class="col-md-3 col-sm-6 awards">
-                  <img src="assets\images\awards\1.jpeg" alt="">
-              </div>
-              <div class="col-md-3 col-sm-6 awards">
-                  <img src="assets\images\awards\2.jpeg" alt="">
-              </div>
-              <div class="col-md-3 col-sm-6 awards">
-                  <img src="assets\images\awards\3.jpeg" alt="">
-              </div>
-              <div class="col-md-3 col-sm-6 awards">
-                  <img src="assets\images\awards\4.jpeg" alt="">
-              </div>
-          </div>
-      </div> -->
+  
+
+
       <div class="block-content">
           <h3 class="block-title">Testimonios</h3>
           <div class="row">
               <div id="liontestimonial" class="owl-carousel owl-theme">
-                  <div>
+                  <div *ngFor="let testi of cv.testimonio">
                     <div class="item testimonials">
-                        <img src="assets\images\testimonials\1.jpeg" alt="">
-                        <blockquote>
-                            <p class="quote"><span></span> - </p>
+                        <img src="assets\images\testimonials\1.jpeg" [alt]="testi.nombre">
+                        <blockquote>{{testi.descripcion}}
+                            <p class="quote"><span>{{testi.nombre}}</span> -{{testi.cargo}} </p>
                         </blockquote>
                     </div>
                 </div>
