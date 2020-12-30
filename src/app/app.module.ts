@@ -2,6 +2,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule} from '@angular/common/http';//libreria para el uso de firebase 
 
+//libreria para formulario de contacto
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from '../environments/environment';
+import { ReactiveFormsModule } from '@angular/forms';
+
+//servicios
+
+import { DataDbService } from './services/data-db.service';
+
+
+
+
+
+
 
 
 //componentes 
@@ -21,9 +36,15 @@ import { ContactoComponent } from './contacto/contacto.component';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule//libreria para el uso de firebase 
+    HttpClientModule,//libreria para el uso de firebase 
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
+    ReactiveFormsModule
+
   ],
-  providers: [],
+  providers: [
+    DataDbService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
