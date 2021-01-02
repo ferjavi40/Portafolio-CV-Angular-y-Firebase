@@ -4,42 +4,62 @@
         <div class="row">
             <div class="col-md-6">
 
-                
-                    
-                        <form [formGroup]="contactForm" (ngSubmit)="onSaveForm()" >
-                            <div class="form-control-wrap">
-                                <div id="message" class="alert alert-danger alert-dismissible fade"></div>
-    
-                                <div class="form-group">
-                                    <input type="text" formControlName="name" placeholder="Nombre" class="form-control">
-                                    <div class="alert alert-danger">
-                                        <div class="container-error-message">
-                                           Nombre es requerido 
-                                        </div>
-                                        <div class="container-error-message">
-                                            Nombre debe ser al menos 5 caracteres
-                                         </div>
-                                    </div>
+
+
+                <form [formGroup]="contactForm" (ngSubmit)="onSaveForm()">
+                    <div class="form-control-wrap">
+                        <div id="message" class="alert alert-danger alert-dismissible fade"></div>
+
+                        <div class="form-group">
+                            <input type="text" formControlName="name" placeholder="Nombre" class="form-control">
+                            <div class="alert alert-danger" *ngIf="name.invalid && (name.dirty||name.touched)">
+                                <div class="container-error-message" *ngIf="name.errors.required">
+                                    Nombre es requerido
                                 </div>
-    
-    
-                                <div class="form-group mar-top-40">
-                                    <input type="text" class="form-control" placeholder="Correo electronico"
-                                        formControlName="email">
-                                </div>
-    
-                                <div class="form-group mar-top-60">
-                                    <textarea class="form-control" rows="10" placeholder="Su Mensaje"
-                                        formControlName="message"></textarea>
-                                </div>
-    
-                                <div class="form-group mar-top-40">
-                                    <button type="submit" class="btn v7">Enviar Mensaje</button>
+                                <div class="container-error-message" *ngIf="name.errors.minlength">
+                                    Nombre debe ser al menos 5 caracteres
                                 </div>
                             </div>
-                        </form>
-                    
-                
+                        </div>
+
+
+                        <div class="form-group mar-top-40">
+                            <input type="text" class="form-control" placeholder="Correo electronico"
+                                formControlName="email">
+                                <div class="alert alert-danger" *ngIf="email.invalid && (email.dirty||email.touched)">
+                                    <div class="container-error-message" *ngIf="email.errors.required">
+                                        Email es requerido
+                                    </div>
+                                    <div class="container-error-message" *ngIf="email.errors.minlength">
+                                        Email debe ser al menos 5 caracteres
+                                    </div>
+                                    <div class="container-error-message" *ngIf="(email.dirty || email.touched) && email.invalid && email.errors.pattern">
+                                        El Email tiene que ser valido.
+                                    </div>
+                                </div>
+                        </div>
+
+                        <div class="form-group mar-top-60">
+                            <textarea class="form-control" rows="10" placeholder="Su Mensaje"
+                                formControlName="message"></textarea>
+                                <div class="alert alert-danger" *ngIf="message.invalid && (message.dirty||message.touched)">
+                                    <div class="container-error-message" *ngIf="message.errors.required">
+                                        Mensaje es requerido
+                                    </div>
+                                    <div class="container-error-message" *ngIf="message.errors.minlength">
+                                        El mensaje debe de tener menos de 20 caracteres.
+                                    </div>
+                                </div>
+                        </div>
+
+                        <div class="form-group mar-top-40">
+                            <button type="submit" class="btn v7" [disabled]="!contactForm.valid">Enviar Mensaje</button>
+                        </div>
+                    </div>
+                    <h4>Me pondre en contacto contigo a la mayor brevedad posible, gracias!</h4>
+                </form>
+
+
 
 
             </div>
