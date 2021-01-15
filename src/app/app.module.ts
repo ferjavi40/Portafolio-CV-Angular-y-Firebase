@@ -8,6 +8,8 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { CountUpModule } from 'ngx-countup';// este es para el efecto de que los numeros se cuenten rapdio//este para el efecto de movimiento de las barras
+
 //servicios
 
 import { DataDbService } from './services/data-db.service';
@@ -39,7 +41,8 @@ import { ContactoComponent } from './contacto/contacto.component';
     HttpClientModule,//libreria para el uso de firebase 
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CountUpModule//este para el efecto de movimiento de las barras
 
   ],
   providers: [

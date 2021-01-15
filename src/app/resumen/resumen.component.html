@@ -1,42 +1,44 @@
-  <section class="content" id="about">
-      <div class="block-content">
-          <h3 class="block-title">Perfil</h3>
-          <h3 class="subheading">¡Hola! soy Fernando Ramirez <strong>Desarrollador Front end</strong></h3>
-          <p>Web con 2 años de experiencia en el desarrollo Front end desde 0 y  en diversos lenguajes Css, Html, Javascript, Ecmascript, Typescript, Bootstrap, Angular y Git-hub</p>
-          <div class="info-list row">
-              <div class="col-sm-6"><span>Nombre : </span> Fernando Ramirez</div>
-              <div class="col-sm-6"><span>Fecha de Nacimiento : </span>4 de Febrero, 1990 </div>
-              <div class="col-sm-6"><span>Dirección : </span> Malaga , España</div>
-              <div class="col-sm-6"><span>Email : </span> ferjaviramirez@gmail.com</div>
-              <div class="col-sm-6"><span>Telefono : </span> +34 675387228</div>
-              <div class="col-sm-6"><span>Interes : </span> Jornada completa, Freelancer</div>
-          </div>
-      </div>
+<section class="content" id="about">
+    <div class="block-content">
+        <h3 class="block-title">Perfil</h3>
+        <h3 class="subheading">¡Hola! soy Fernando Ramirez <strong>Desarrollador Front end</strong></h3>
+        <p>Web con 2 años de experiencia en el desarrollo Front end desde 0 y en diversos lenguajes Css, Html,
+            Javascript, Ecmascript, Typescript, Bootstrap, Angular y Git-hub</p>
+        <div class="info-list row">
+            <div class="col-sm-6"><span>Nombre : </span> Fernando Ramirez</div>
+            <div class="col-sm-6"><span>Fecha de Nacimiento : </span>4 de Febrero, 1990 </div>
+            <div class="col-sm-6"><span>Dirección : </span> Malaga , España</div>
+            <div class="col-sm-6"><span>Email : </span> ferjaviramirez@gmail.com</div>
+            <div class="col-sm-6"><span>Telefono : </span> +34 675387228</div>
+            <div class="col-sm-6"><span>Interes : </span> Jornada completa, Freelancer</div>
+        </div>
+    </div>
 
-      <div class="block-content">
-          <h3 class="block-title">Profesional</h3>
-          <div >
-            
+    <div class="block-content">
+        <h3 class="block-title">Profesional</h3>
+        <div>
+
             <div *ngFor="let profe of cv.profesional">
                 <label class="progress-bar-label">{{ profe.nombre }}</label>
                 <div class="progress">
-                    <div [style.width.%]="profe.valor"class="progress-bar" role="progressbar" attr.aria-valuenow="" aria-valuemin="0" aria-valuemax="100">
+                    <div [style.width.%]="profe.valor" class="progress-bar" role="progressbar" attr.aria-valuenow=""
+                        aria-valuemin="0" aria-valuemax="100">
                         <span>{{profe.valor}}%</span>
                     </div>
                 </div>
             </div>
 
-           
+
         </div>
 
-      </div>
-      <div class="block-content">
-          <h3 class="block-title">Experiencia</h3>
-          <div class="timeline experience">
-              <div class="row">
-                  <div class="col-md-12">
-                      <div class="exp-holder">
-                          <div *ngFor="let expe of cv.experiencia">
+    </div>
+    <div class="block-content">
+        <h3 class="block-title">Experiencia</h3>
+        <div class="timeline experience">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="exp-holder">
+                        <div *ngFor="let expe of cv.experiencia">
                             <div class="exp">
                                 <div class="hgroup">
                                     <h4><span>{{expe.puesto}}</span>-{{expe.empresa}} </h4>
@@ -45,66 +47,71 @@
                                 <p>{{expe.descripcion}}</p>
                             </div>
                         </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <div class="block-content">
-          <h3 class="block-title">Educación</h3>
-          <div class="timeline education">
-              <div class="row">
-                  <div class="col-md-12">
-                      <div class="exp-holder">
-                        <div *ngFor="let edu of cv.educacion " >
-                          <div class="exp" >
-                              <div class="hgroup">
-                                  <h4> {{edu.titulo}} | {{edu.fecha}}</h4>
-                                  <h5></h5>
-                              </div>
-                              <p>{{edu.descripcion}}</p>
-                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="block-content">
+        <h3 class="block-title">Educación</h3>
+        <div class="timeline education">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="exp-holder">
+                        <div *ngFor="let edu of cv.educacion ">
+                            <div class="exp">
+                                <div class="hgroup">
+                                    <h4> {{edu.titulo}} | {{edu.fecha}}</h4>
+                                    <h5></h5>
+                                </div>
+                                <p>{{edu.descripcion}}</p>
+                            </div>
                         </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <div class="block-content">
-          <h3 class="block-title">Servicios</h3>
-          <div class="row">
-              <div class="col-md-4 col-sm-6 service">
-                  <div class="service-icon">
-                      <i class="ion-laptop"></i>
-                  </div>
-                  <h4>Diseño Web</h4>
-                  <p>Una web es imprescindible para atraer a clientes potenciales,te brindo un diseño responsive y actual que se adapta a tu indetidad corporativa, logrando tus objetivos y metas dando a conocer tu negocio en el mundo digital.</p>
-              </div>
-              <div class="col-md-4 col-sm-6 service">
-                  <div class="service-icon">
-                      <i class="ion-pie-graph"></i>
-                  </div>
-                  <h4>Desarrollo de Aplicaciones</h4>
-                  <p>Soy experto en diseño y desarrollo de aplicaciones, garantizando una total y absoluta libertad en cuanto a interacción y contenido.</p>
-              </div>
-              <div class="col-md-4 col-sm-6 service">
-                  <div class="service-icon">
-                      <i class="ion-paintbucket"></i>
-                  </div>
-                  <h4>Diseño de logo profesionales</h4>
-                  <p>Mis logotipos están hechos a medida y destacan por su calidad, elegancia y el cuidado en cada detalle. Buscola excelencia en el servicio y en el resultado, ofreciendo un sistema de trabajo que garantiza la completa satisfacción de cada uno de mis clientes.</p>
-              </div>
-              
-          </div>
-      </div>
-  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="block-content">
+        <h3 class="block-title">Servicios</h3>
+        <div class="row">
+            <div class="col-md-4 col-sm-6 service">
+                <div class="service-icon">
+                    <i class="ion-laptop"></i>
+                </div>
+                <h4>Diseño Web</h4>
+                <p>Una web es imprescindible para atraer a clientes potenciales,te brindo un diseño responsive y actual
+                    que se adapta a tu indetidad corporativa, logrando tus objetivos y metas dando a conocer tu negocio
+                    en el mundo digital.</p>
+            </div>
+            <div class="col-md-4 col-sm-6 service">
+                <div class="service-icon">
+                    <i class="ion-pie-graph"></i>
+                </div>
+                <h4>Desarrollo de Aplicaciones</h4>
+                <p>Soy experto en diseño y desarrollo de aplicaciones, garantizando una total y absoluta libertad en
+                    cuanto a interacción y contenido.</p>
+            </div>
+            <div class="col-md-4 col-sm-6 service">
+                <div class="service-icon">
+                    <i class="ion-paintbucket"></i>
+                </div>
+                <h4>Diseño de logo profesionales</h4>
+                <p>Mis logotipos están hechos a medida y destacan por su calidad, elegancia y el cuidado en cada
+                    detalle. Buscola excelencia en el servicio y en el resultado, ofreciendo un sistema de trabajo que
+                    garantiza la completa satisfacción de cada uno de mis clientes.</p>
+            </div>
+
+        </div>
+    </div>
 
 
-      <div class="block-content">
-          <h3 class="block-title">Testimonios</h3>
-          <div class="row">
-              <div id="liontestimonial" class="owl-carousel owl-theme">
-                  <div *ngFor="let testi of cv.testimonio">
+
+    <div class="block-content">
+        <h3 class="block-title">Testimonios</h3>
+        <div class="row">
+            <div id="liontestimonial" class="owl-carousel owl-theme">
+                <div *ngFor="let testi of cv.testimonio">
                     <div class="item testimonials">
                         <img src="assets\images\testimonials\1.jpeg" [alt]="testi.nombre">
                         <blockquote>{{testi.descripcion}}
@@ -113,12 +120,12 @@
                     </div>
                 </div>
 
-              </div>
-          </div>
-      </div>
-      <div class="row text-center">
-          <div class="col-md-12 btn-email">
-              <a class="btn lowercase">ferjaviramirez@gmail.com</a>
-          </div>
-      </div>
-  </section>
+            </div>
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="col-md-12 btn-email">
+            <a class="btn lowercase">ferjaviramirez@gmail.com</a>
+        </div>
+    </div>
+</section>
